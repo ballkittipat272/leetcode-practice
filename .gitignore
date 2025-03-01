@@ -1,0 +1,107 @@
+# user info
+*.user
+*.lock
+*.DS_Store
+*.suo
+*.pdb
+*.cache
+*.log
+*.vspscc
+*.vssscc
+
+# VS Code
+.vscode/
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Roslyn Cache
+.roslyn/
+
+# Rider project files
+.idea/
+*.sln.iml
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config for publish
+publish/
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+*.dll
+
+# Test results
+[Tt]est[Rr]esult*/
+
+# IIS
+[Ii][Nn][Ee][Tt][Pp][Uu][Bb]/
+.publish/
+
+# User-specific files
+*.rsuser
+*.sln.docstates
+
+# DotNet Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Logs
+*.log
+
+# Visual Studio Code
+.vscode/
+.history/
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Web
+node_modules/
+npm-debug.log*
+yarn.lock
+package-lock.json
+.env
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# Local History for JetBrains
+.localhistory/
+
+# Coverage
+coverage/
+*.coverage
+*.coveragexml
+*.coveragejson
+*.cov
+*.cov.json
+
+# Publish Web Output
+publish/
+
+# Backup files
+*.bak
+*.swp
+*.swo
+
+# Rider
+.idea/
+*.sln.iml
