@@ -1,5 +1,5 @@
 ﻿/*
-START: 15:54, END: 
+START: 15:54, END: 16:28
 Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
 
 Symbol       Value
@@ -87,7 +87,7 @@ int RomanToInt(string s)
             if (c == prevC)
             {
                 var cVal = dict[c];
-                val -= (cVal * 2);
+                val -= cVal * 2;
             }
 
         }
