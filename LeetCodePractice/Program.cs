@@ -1,23 +1,15 @@
 ﻿/* START: 14:44, END:   */
 
-ListNode param1;
-bool output;
-
 bool HasCycle(ListNode head)
 {
-    if (head == null) return false;
+    HashSet<ListNode> hs = new HashSet<ListNode>();
+    ListNode current = head;
 
-    ListNode node1, node2;
-    node1 = head;
-    node2 = head;
-
-    while (node2 != null && node2.next != null)
-    {
-        node1 = node1.next;
-        node2 = node2.next.next;
-
-        if (node1 == node2)
+    while (current != null) {
+        if (hs.Contains(current))
             return true;
+        hs.Add(current);
+        current = current.next;
     }
 
     return false;
@@ -49,6 +41,9 @@ ListNode CreateLinkedListWithCycle(int[] nums, int pos)
 
     return head;
 }
+
+ListNode param1;
+bool output;
 
 param1 = CreateLinkedListWithCycle([3, 2, 0, -4], 1);
 output = HasCycle(param1);
