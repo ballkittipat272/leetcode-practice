@@ -4,10 +4,23 @@ int MaxDepth(TreeNode root)
 {
     if (root == null) return 0;
 
-    int leftDepth = MaxDepth(root.left);
-    int rightDepth = MaxDepth(root.right);
+    int maxDepth = 0;
+    Stack<(TreeNode, int)> stack = new Stack<(TreeNode, int)>();
+    stack.Push((root, 1));
 
-    return Math.Max(leftDepth, rightDepth) + 1;
+    while (stack.Count > 0)
+    {
+        var (leaf, depth) = stack.Pop();
+        maxDepth = Math.Max(maxDepth, depth);
+
+        if (leaf.left != null)
+            stack.Push((leaf.left, depth + 1));
+
+        if (leaf.right != null)
+            stack.Push((leaf.right, depth + 1));
+    }
+
+    return maxDepth;
 }
 
 TreeNode param1;
