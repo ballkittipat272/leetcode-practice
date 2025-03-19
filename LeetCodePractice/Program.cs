@@ -5,23 +5,21 @@
 
 int MinSubArrayLen(int target, int[] nums)
 {
-    int left = 0;
-    int sum = 0;
-    int length = 0;
-    int minLength = 0;
-    for (int i = left; i < nums.Length && left < nums.Length; i++)
+    int left, right, sum, minLength;
+    left = right = sum = minLength = 0;
+    while (left < nums.Length && right < nums.Length)
     {
-        sum += nums[i];
-        length++;
+        sum += nums[right];
         if (sum >= target)
         {
-            if (minLength == 0 || length < minLength)
-                minLength = length;
-            sum = 0;
-            length = 0;
+            if (minLength > right - left + 1 || minLength == 0)
+                minLength = right - left + 1;
+            sum -= nums[left];
+            sum -= nums[right];
             left++;
-            i = left - 1;
         }
+        else
+            right++;
     }
     return minLength;
 }
