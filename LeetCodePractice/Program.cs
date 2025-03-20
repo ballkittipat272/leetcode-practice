@@ -5,22 +5,18 @@
 
 int[] TwoSum(int[] numbers, int target)
 {
-    int index1 = 0, index2 = 1;
-    while (index2 < numbers.Length)
+    int left = 0, right = numbers.Length - 1;
+    while (left < right)
     {
-        int num1 = numbers[index1];
-        int num2 = numbers[index2];
-        int sum = num1 + num2;
+        int numLeft = numbers[left];
+        int numRight = numbers[right];
+        int sum = numLeft + numRight;
         if (sum == target)
-            return [index1 + 1, index2 + 1];
-        if (index2 >= numbers.Length - 1)
-        {
-            index1++;
-            if (index1 >= numbers.Length)
-                break;
-            index2 = index1;
-        }
-        index2++;
+            return [left + 1, right + 1];
+        else if (sum < target)
+            left++;
+        else if (sum > target)
+            right--;
     }
     return [0, 0];
 }
